@@ -1,5 +1,5 @@
 import { GetUsersController } from "./controllers/get-users/get-users";
-import express, { response } from "express";
+import express from "express";
 import { config } from "dotenv";
 import { MongoGetUsersRepository } from "./repositories/get-users/mongo-get-users";
 
