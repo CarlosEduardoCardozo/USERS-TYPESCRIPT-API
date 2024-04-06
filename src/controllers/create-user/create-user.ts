@@ -1,6 +1,5 @@
 import { User } from "./../../models/user";
-import { httpRequest } from "./../protocols";
-import { HttpResponse } from "../protocols";
+import { HttpResponse, HttpRequest } from "../protocols";
 import {
   CreateUserParams,
   ICreateUserController,
@@ -12,7 +11,7 @@ export class CreateUserController implements ICreateUserController {
   constructor(private readonly createUserRepository: ICreateUserRepository) {}
 
   async handle(
-    httpRequest: httpRequest<CreateUserParams>
+    httpRequest: HttpRequest<CreateUserParams>
   ): Promise<HttpResponse<User>> {
     try {
       const requiredFields = ["firstName", "lastName", "email", "password"];
